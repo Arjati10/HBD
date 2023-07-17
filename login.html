@@ -21,6 +21,7 @@
       rel="stylesheet"
     />
     <link href="styles/sb-admin-2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
   </head>
 
   <body class="bg-gradient-primary">
@@ -81,6 +82,8 @@
     </div>
   </body>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script>
     // Mendapatkan referensi elemen-elemen pada form
     const form = document.querySelector("form");
@@ -102,21 +105,41 @@
 
     // Fungsi untuk memeriksa login
     function login(username, password) {
-      // Lakukan validasi login di sini (misalnya dengan mengirimkan permintaan AJAX ke server)
-      // Contoh sederhana:
-
-      // Periksa apakah username dan password sesuai dengan yang diharapkan
+      // Periksa username dan password sesuai dengan yang diharapkan
       if (
         username === "saviraIndependentWoman" &&
         password === "sibuksibuksukses"
       ) {
-        alert("Login berhasil!");
-        // Lakukan tindakan yang diperlukan setelah login berhasil
+        Swal.fire({
+          title: "Masuk Mbak!",
+          text: "Yeayyy Mbak Berhasil Masuk",
+          icon: "success",
+          confirmButtonText: "Ok",
+        });
+        // alert("Login berhasil!");
+        // tindakan yang diperlukan setelah login berhasil
         window.location.href = "index.html";
       } else {
-        alert("Username atau password salah!");
-        // Lakukan tindakan yang diperlukan jika login gagal
+        Swal.fire({
+          title: "Error!",
+          text: "username atau password salah mbak",
+          icon: "error",
+          confirmButtonText: "Ok",
+        });
+        // alert("Username atau password salah!");
+        // tindakan yang diperlukan jika login gagal
       }
     }
+
+    // toast.error("🦄 Wow so easy!", {
+    //   position: "top-center",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "light",
+    // });
   </script>
 </html>
